@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_09_095707) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_09_122541) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animals", force: :cascade do |t|
+    t.string "nom"
+    t.string "especes"
+    t.integer "age"
+    t.string "localisation"
+    t.integer "prix"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_animals_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "date_debut"
+    t.date "date_fin"
+    t.string "statut"
+    t.bigint "animal_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_reservations_on_animal_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_095707) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "animals", "users"
+  add_foreign_key "reservations", "animals"
+  add_foreign_key "reservations", "users"
 end
