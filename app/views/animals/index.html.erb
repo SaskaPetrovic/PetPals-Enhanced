@@ -1,14 +1,195 @@
-<h1>Liste des Animaux</h1>
+<section class="search">
+  <div class="container text-center">
+    <h1 class="my-4">Find your next Pet pal!</h1>
+    <form class="d-flex justify-content-center">
+      <div class="input-group mb-2" style="max-width: 400px; width: 100%;">
+        <input type="text" class="form-control" placeholder="What kind of pal are you looking for?">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
 
-<ul>
-  <% @animals.each do |animal| %>
-    <li>
-      <img src="<%= animal.photo_url %>" alt="<%= animal.nom %>" style="width: 100px; height: auto;">
-      <strong>Nom:</strong> <%= animal.nom %> |
-      <strong>Espèce:</strong> <%= animal.especes %> |
-      <strong>Âge:</strong> <%= animal.age %> ans |
-      <strong>Localisation:</strong> <%= animal.localisation %> |
-      <strong>Prix:</strong> <%= animal.prix %> $
+<!-- Navbar des onglets -->
+<div class="container mt-5">
+  <ul class="nav nav-tabs justify-content-center" id="animalTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active d-flex flex-column align-items-center" id="cats-tab" data-bs-toggle="tab" href="#cats" role="tab" aria-controls="cats" aria-selected="true">
+        <%= image_tag 'icons/cat_icon.png', style: 'width: 40px; height: 40px;', alt: 'Cat Icon' %>
+        <span>Cats</span>
+      </a>
     </li>
-  <% end %>
-</ul>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link d-flex flex-column align-items-center" id="dogs-tab" data-bs-toggle="tab" href="#dogs" role="tab" aria-controls="dogs" aria-selected="false">
+        <%= image_tag 'icons/dog_icon.png', style: 'width: 40px; height: 40px;', alt: 'Dog Icon' %>
+        <span>Dogs</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link d-flex flex-column align-items-center" id="rodents-tab" data-bs-toggle="tab" href="#rodents" role="tab" aria-controls="rodents" aria-selected="false">
+        <%= image_tag 'icons/rabbit_icon.png', style: 'width: 40px; height: 40px;', alt: 'Rabbit Icon' %>
+        <span>Rodents</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link d-flex flex-column align-items-center" id="reptiles-tab" data-bs-toggle="tab" href="#reptiles" role="tab" aria-controls="reptiles" aria-selected="false">
+        <%= image_tag 'icons/snake_icon.png', style: 'width: 40px; height: 40px;', alt: 'Snake Icon' %>
+        <span>Reptiles</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link d-flex flex-column align-items-center" id="fishes-tab" data-bs-toggle="tab" href="#fishes" role="tab" aria-controls="fishes" aria-selected="false">
+        <%= image_tag 'icons/fish_icon.png', style: 'width: 40px; height: 40px;', alt: 'Fish Icon' %>
+        <span>Fishes</span>
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link d-flex flex-column align-items-center" id="birds-tab" data-bs-toggle="tab" href="#birds" role="tab" aria-controls="birds" aria-selected="false">
+        <%= image_tag 'icons/toucan_icon.png', style: 'width: 40px; height: 40px;', alt: 'Toucan Icon' %>
+        <span>Birds</span>
+      </a>
+    </li>
+  </ul>
+<div class="tab-content" id="animalTabsContent">
+    <!-- Onglet Cats -->
+    <div class="tab-pane fade show active" id="cats" role="tabpanel" aria-labelledby="cats-tab">
+      <div class="row mt-3">
+        <% @cats.each_slice(4) do |cats_slice| %>
+          <% cats_slice.each do |cat| %>
+            <div class="col-md-3 mb-3">
+              <%= link_to animal_path(cat), class: 'text-decoration-none text-dark' do %>
+                <div class="card">
+                  <img src="<%= cat.photo_url %>" class="card-img-top" alt="Cat Image">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= cat.nom %></h5>
+                    <p class="card-text">Age: <%= cat.age %> years</p>
+                    <p class="card-text">Price: $<%= cat.prix %></p>
+                    <p class="card-text">Location: <%= cat.localisation %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Onglet Dogs -->
+    <div class="tab-pane fade" id="dogs" role="tabpanel" aria-labelledby="dogs-tab">
+      <div class="row mt-3">
+        <% @dogs.each_slice(4) do |dogs_slice| %>
+          <% dogs_slice.each do |dog| %>
+            <div class="col-md-3 mb-3">
+              <%= link_to animal_path(dog), class: 'text-decoration-none text-dark' do %>
+                <div class="card">
+                  <img src="<%= dog.photo_url %>" class="card-img-top" alt="Dog Image">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= dog.nom %></h5>
+                    <p class="card-text">Age: <%= dog.age %> years</p>
+                    <p class="card-text">Price: $<%= dog.prix %></p>
+                    <p class="card-text">Location: <%= dog.localisation %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Onglet Rodents -->
+    <div class="tab-pane fade" id="rodents" role="tabpanel" aria-labelledby="rodents-tab">
+      <div class="row mt-3">
+        <% @rodents.each_slice(4) do |rodents_slice| %>
+          <% rodents_slice.each do |rodent| %>
+            <div class="col-md-3 mb-3">
+              <%= link_to animal_path(rodent), class: 'text-decoration-none text-dark' do %>
+                <div class="card">
+                  <img src="<%= rodent.photo_url %>" class="card-img-top" alt="Rodent Image">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= rodent.nom %></h5>
+                    <p class="card-text">Age: <%= rodent.age %> years</p>
+                    <p class="card-text">Price: $<%= rodent.prix %></p>
+                    <p class="card-text">Location: <%= rodent.localisation %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Onglet Reptiles -->
+    <div class="tab-pane fade" id="reptiles" role="tabpanel" aria-labelledby="reptiles-tab">
+      <div class="row mt-3">
+        <% @reptiles.each_slice(4) do |reptiles_slice| %>
+          <% reptiles_slice.each do |reptile| %>
+            <div class="col-md-3 mb-3">
+              <%= link_to animal_path(reptile), class: 'text-decoration-none text-dark' do %>
+                <div class="card">
+                  <img src="<%= reptile.photo_url %>" class="card-img-top" alt="Reptile Image">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= reptile.nom %></h5>
+                    <p class="card-text">Age: <%= reptile.age %> years</p>
+                    <p class="card-text">Price: $<%= reptile.prix %></p>
+                    <p class="card-text">Location: <%= reptile.localisation %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Onglet Fishes -->
+    <div class="tab-pane fade" id="fishes" role="tabpanel" aria-labelledby="fishes-tab">
+      <div class="row mt-3">
+        <% @fishes.each_slice(4) do |fishes_slice| %>
+          <% fishes_slice.each do |fish| %>
+            <div class="col-md-3 mb-3">
+              <%= link_to animal_path(fish), class: 'text-decoration-none text-dark' do %>
+                <div class="card">
+                  <img src="<%= fish.photo_url %>" class="card-img-top" alt="Fish Image">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= fish.nom %></h5>
+                    <p class="card-text">Age: <%= fish.age %> years</p>
+                    <p class="card-text">Price: $<%= fish.prix %></p>
+                    <p class="card-text">Location: <%= fish.localisation %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Onglet Birds -->
+    <div class="tab-pane fade" id="birds" role="tabpanel" aria-labelledby="birds-tab">
+      <div class="row mt-3">
+        <% @birds.each_slice(4) do |birds_slice| %>
+          <% birds_slice.each do |bird| %>
+            <div class="col-md-3 mb-3">
+              <%= link_to animal_path(bird), class: 'text-decoration-none text-dark' do %>
+                <div class="card">
+                  <img src="<%= bird.photo_url %>" class="card-img-top" alt="Bird Image">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= bird.nom %></h5>
+                    <p class="card-text">Age: <%= bird.age %> years</p>
+                    <p class="card-text">Price: $<%= bird.prix %></p>
+                    <p class="card-text">Location: <%= bird.localisation %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>

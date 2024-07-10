@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#index"
 
   # Routes pour les animaux
-  resources :animals, only: [:index]
+  resources :animals do
+    resources :reservations, only: [:create]
+  end
 
   # Routes pour les réservations
-  resources :reservations, only: [:create] do
+  resources :reservations, only: [] do
     member do
       patch 'accept'
       patch 'decline'
