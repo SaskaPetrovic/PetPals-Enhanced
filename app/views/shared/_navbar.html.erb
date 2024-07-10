@@ -1,10 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <%= link_to "PetPals", "#", class: "navbar-brand" %>
 
- <%= link_to "#", class: "navbar-brand" do %>
-      <h1>PetPals</h1>
-      <%= image_tag "icons/pawprint_logo.png" %>
-    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,6 +21,7 @@
             <%= image_tag "https://cdn.icon-icons.com/icons2/1949/PNG/512/free-30-instagram-stories-icons53_122600.png", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to 'Dashboard', dashboard_path, class: "dropdown-item" %>
               <%= link_to "Messages", "#", class: "dropdown-item" %>
               <%= link_to "Notifications", "#", class: "dropdown-item" %>
               <%= link_to "Animaux", "#", class: "dropdown-item" %>
