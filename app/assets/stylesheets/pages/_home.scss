@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+// search bar
+.search {
+  background-color: #5db9de;
+  padding: 50px 0;
+}
+.search h1 {
+  color: #333333;
+  margin-bottom: 30px;
+}
+.search .form-control {
+  border-radius: 20px 0 0 20px;
+}
+.search .btn-primary {
+  border-radius: 0 20px 20px 0;
+  background-color: #FFD166;
+  border-color: #FFD166;
+}
+.search .btn-primary:hover {
+  background-color: #FF6F61;
+  border-color: #FF6F61;
+}
