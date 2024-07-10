@@ -13,12 +13,11 @@
 
 @font-face {
   font-family: 'Satoshi-Regular';
-  src: url('/assets/Satoshi-Regular.woff2') format('woff2'),
-       url('/assets/Satoshi-Regular.woff') format('woff');
+  src: url('Satoshi-Regular.woff2') format('woff2'),
+       url('Satoshi-Regular.woff')  format('woff');
   font-weight: normal;
   font-style: normal;
 }
-
-body {
-  font-family: 'Satoshi-Regular', sans-serif;
+body{
+  font-family: 'Satoshi-Regular', sans-serif !important;
 }
