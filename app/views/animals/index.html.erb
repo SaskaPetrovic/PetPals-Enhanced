@@ -1,1 +1,14 @@
-<h1>Hello</h1>
+<h1>Liste des Animaux</h1>
+
+<ul>
+  <% @animals.each do |animal| %>
+    <li>
+      <img src="<%= animal.photo_url %>" alt="<%= animal.nom %>" style="width: 100px; height: auto;">
+      <strong>Nom:</strong> <%= animal.nom %> |
+      <strong>Espèce:</strong> <%= animal.especes %> |
+      <strong>Âge:</strong> <%= animal.age %> ans |
+      <strong>Localisation:</strong> <%= animal.localisation %> |
+      <strong>Prix:</strong> <%= animal.prix %> $
+    </li>
+  <% end %>
+</ul>

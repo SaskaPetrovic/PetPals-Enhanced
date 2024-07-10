@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#index"
 
   # Routes pour les animaux
-  resources :animals
+  resources :animals, only: [:index]
 
   # Routes pour les réservations
   resources :reservations, only: [:create] do
