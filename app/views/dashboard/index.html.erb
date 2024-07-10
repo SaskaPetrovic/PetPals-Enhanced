@@ -9,18 +9,42 @@
     <p> Localisation: <%= animal.localisation %> </p>
     <p> Prix: <%= animal.prix %> $</p>
   </div>
- <%end%>
+<% end %>
 
 <h3> Reservations </h3>
 <% if @reservations.any? %>
   <% @reservations.each do |reservation|%>
     <div>
-      <h4>Animal : <%= reservation.animal.nom %></h4>
-      <p> Date de début : <% reservation.date_debut %></p>
-      <p> Date de fin : <% reservation.date_fin %></p>
-      <p> Statut : <%= reservation.statut%></p>
-    </div>
+    <h4>Animal: <%= reservation.animal.nom %></h4>
+    <p>Species: <%= reservation.animal.especes %></p>
+    <p>Age: <%= reservation.animal.age %> years</p>
+    <p>Location: <%= reservation.animal.localisation %></p>
+    <p>Price: <%= reservation.animal.prix %> $</p>
+    <p>Start Date: <%= reservation.date_debut %></p>
+    <p>End Date: <%= reservation.date_fin %></p>
+    <p>Status: <%= reservation.statut %></p>
+  </div>
   <%end%>
 <% else %>
   <p>Vous n'avez aucune réservation.</p>
 <%end%>
+
+<h3>Create Animal for Rent</h3>
+<form action="/animals" method="post">
+  <label for="nom">Nom:</label>
+  <input type="text" name="nom" id="nom" required>
+
+  <label for="especes">Espèce:</label>
+  <input type="text" name="especes" id="especes" required>
+
+  <label for="age">Age:</label>
+  <input type="number" name="age" id="age" required>
+
+  <label for="localisation">Localisation:</label>
+  <input type="text" name="localisation" id="localisation" required>
+
+  <label for="prix">Prix:</label>
+  <input type="number" name="prix" id="prix" required>
+
+  <input type="submit" value="Create">
+</form>
