@@ -10,3 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@font-face {
+  font-family: 'satoshi';
+  src: url('/assets/Satoshi-Regular.woff2') format('woff2'),
+       url('/assets/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'satoshi', sans-serif;
+}
