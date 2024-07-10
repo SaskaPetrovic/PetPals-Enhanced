@@ -12,11 +12,15 @@
  <%end%>
 
 <h3> Reservations </h3>
-<% @reservations.each do |reservation|%>
-  <div>
-    <h4>Animal : <%= reservation.animal.nom %></h4>
-    <p> Date de début : <% reservation.date_debut %></p>
-    <p> Date de fin : <% reservation.date_fin %></p>
-    <p> Statut : <%= reservation.statut%></p>
-  </div>
+<% if @reservations.any? %>
+  <% @reservations.each do |reservation|%>
+    <div>
+      <h4>Animal : <%= reservation.animal.nom %></h4>
+      <p> Date de début : <% reservation.date_debut %></p>
+      <p> Date de fin : <% reservation.date_fin %></p>
+      <p> Statut : <%= reservation.statut%></p>
+    </div>
   <%end%>
+<% else %>
+  <p>Vous n'avez aucune réservation.</p>
+<%end%>
