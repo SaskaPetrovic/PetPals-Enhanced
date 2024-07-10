@@ -1,1 +1,20 @@
-<h1>Hello</h1>
+<h1>Dashboard</h1>
+
+<h3>My Animals</h3>
+<% @animals.each do |animal|%>
+  <div>
+    <h4> <%= animal.nom %> </h4>
+    <p> Espèce: <%= animal.especes %> </p>
+    <p> Age: <%= animal.age %> years</p>
+    <p> Localisation: <%= animal.localisation %> </p>
+    <p> Prix: <%= animal.prix %> $</p>
+  </div>
+ <%end%>
+
+<h3> Reservations </h3>
+<% @reservations.each do |reservation|%>
+ <div>
+  <h4>Animal : <%= reservation.animal.nom %></h4>
+  <p> Date de
+  <%end%>
+ </div>
