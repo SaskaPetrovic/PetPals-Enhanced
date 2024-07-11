@@ -3,6 +3,6 @@ class DashboardController < ApplicationController
 
   def index
     @reservations = current_user.reservations.includes(:animal)
-    @animals = current_user.animals.limit(3)
+    @animals = current_user.animals
   end
 end
