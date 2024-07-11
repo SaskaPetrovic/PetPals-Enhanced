@@ -1,22 +1,46 @@
-// Specific CSS for your home-page
-// search bar
-.search {
-  background-color: #5db9de;
-  padding: 50px 0;
+
+// nav items
+.nav-item :active {
+  color: #FF6F61;
 }
-.search h1 {
-  color: #333333;
-  margin-bottom: 30px;
+
+span:hover {
+  color: #FF6F61;
 }
-.search .form-control {
-  border-radius: 20px 0 0 20px;
+
+span:focus {
+  color: #FF6F61;
 }
-.search .btn-primary {
-  border-radius: 0 20px 20px 0;
-  background-color: #FFD166;
-  border-color: #FFD166;
+
+a[aria-selected="true"] {
+  background-color: #FF6F61 !important;
 }
-.search .btn-primary:hover {
-  background-color: #FF6F61;
-  border-color: #FF6F61;
+
+// cards
+.card {
+  border-radius: 10px;
+  border: 1px solid #FFD166;
+  background-color: antiquewhite;
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.card {
+  .card-title {
+    font-family: Satoshi-Regular;
+    color: #FF6F61;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+h1, h5 {
+  font-family: Satoshi-Regular;
+  font-weight: bold;
 }

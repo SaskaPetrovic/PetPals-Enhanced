@@ -1,58 +1,46 @@
-<section class="search">
-  <div class="container text-center">
-    <h1 class="my-4">Find your next Pet pal!</h1>
-    <form class="d-flex justify-content-center">
-      <div class="input-group mb-2" style="max-width: 400px; width: 100%;">
-        <input type="text" class="form-control" placeholder="What kind of pal are you looking for?">
-        <div class="input-group-append">
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</section>
+<h1>Find your next Pet Pal !</h2>
 
 <!-- Navbar des onglets -->
 <div class="container mt-5">
   <ul class="nav nav-tabs justify-content-center" id="animalTabs" role="tablist">
-    <li class="nav-item" role="presentation">
+    <li class="nav-item flex-fill text-center" role="presentation">
       <a class="nav-link active d-flex flex-column align-items-center" id="cats-tab" data-bs-toggle="tab" href="#cats" role="tab" aria-controls="cats" aria-selected="true">
         <%= image_tag 'icons/cat_icon.png', style: 'width: 40px; height: 40px;', alt: 'Cat Icon' %>
         <span>Cats</span>
       </a>
     </li>
-    <li class="nav-item" role="presentation">
+    <li class="nav-item flex-fill text-center" role="presentation">
       <a class="nav-link d-flex flex-column align-items-center" id="dogs-tab" data-bs-toggle="tab" href="#dogs" role="tab" aria-controls="dogs" aria-selected="false">
         <%= image_tag 'icons/dog_icon.png', style: 'width: 40px; height: 40px;', alt: 'Dog Icon' %>
         <span>Dogs</span>
       </a>
     </li>
-    <li class="nav-item" role="presentation">
+    <li class="nav-item flex-fill text-center" role="presentation">
       <a class="nav-link d-flex flex-column align-items-center" id="rodents-tab" data-bs-toggle="tab" href="#rodents" role="tab" aria-controls="rodents" aria-selected="false">
         <%= image_tag 'icons/rabbit_icon.png', style: 'width: 40px; height: 40px;', alt: 'Rabbit Icon' %>
         <span>Rodents</span>
       </a>
     </li>
-    <li class="nav-item" role="presentation">
+    <li class="nav-item flex-fill text-center" role="presentation">
       <a class="nav-link d-flex flex-column align-items-center" id="reptiles-tab" data-bs-toggle="tab" href="#reptiles" role="tab" aria-controls="reptiles" aria-selected="false">
         <%= image_tag 'icons/snake_icon.png', style: 'width: 40px; height: 40px;', alt: 'Snake Icon' %>
         <span>Reptiles</span>
       </a>
     </li>
-    <li class="nav-item" role="presentation">
+    <li class="nav-item flex-fill text-center" role="presentation">
       <a class="nav-link d-flex flex-column align-items-center" id="fishes-tab" data-bs-toggle="tab" href="#fishes" role="tab" aria-controls="fishes" aria-selected="false">
         <%= image_tag 'icons/fish_icon.png', style: 'width: 40px; height: 40px;', alt: 'Fish Icon' %>
         <span>Fishes</span>
       </a>
     </li>
-    <li class="nav-item" role="presentation">
+    <li class="nav-item flex-fill text-center" role="presentation">
       <a class="nav-link d-flex flex-column align-items-center" id="birds-tab" data-bs-toggle="tab" href="#birds" role="tab" aria-controls="birds" aria-selected="false">
         <%= image_tag 'icons/toucan_icon.png', style: 'width: 40px; height: 40px;', alt: 'Toucan Icon' %>
         <span>Birds</span>
       </a>
     </li>
   </ul>
-<div class="tab-content" id="animalTabsContent">
+  <div class="tab-content" id="animalTabsContent">
     <!-- Onglet Cats -->
     <div class="tab-pane fade show active" id="cats" role="tabpanel" aria-labelledby="cats-tab">
       <div class="row mt-3">
@@ -190,7 +178,6 @@
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
 

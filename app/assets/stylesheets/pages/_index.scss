@@ -1,2 +1,36 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.landing-page {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-image: url("landing.png");
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.landing-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1;
+  position: absolute;
+  top: 20%;
+  left: 11%;
+}
+.landing-content h1{
+font-size: 7vh;
+}
+
+.landing-content p{
+  font-size: 4vh;
+}
+
+.btn-xl {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}

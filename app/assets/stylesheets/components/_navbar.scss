@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,4 +18,60 @@
 }
 .logo-css h1 {
   margin-right: 10px;
+}
+
+.navbar-brand {
+  padding-left: 5%;
+  font-size: 2em;
+}
+
+#navbarSupportedContent {
+  padding-right: 5%;
+}
+
+.navbar {
+  border-bottom: solid 1px #FF6F61;
+}
+
+.nav-link .offre {
+  background-color: #FF6F61 !important;
+  border: solid 0.8px #FFD166;
+  border-radius: 3%;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 15px;
+}
+
+// search bar
+.search {
+  padding: 38px;
+}
+
+.search .form-control {
+  border-radius: 20px 0 0 20px;
+  align-items: center;
+  min-width: 300px;
+}
+
+.search .btn-primary {
+  border-radius: 0 20px 20px 0;
+  background-color: #FFD166;
+  border-color: #FFD166;
+}
+
+.search .btn-primary:hover {
+  background-color: #FF6F61;
+  border-color: #FF6F61;
+}
+
+.logo-css{
+  display: flex ;
+}
+.logo-css img{
+  width: auto;
+  height: 45px;
+}
+.logo-css h1{
+  margin-left: 10px;
 }
