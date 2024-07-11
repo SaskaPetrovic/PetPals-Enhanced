@@ -4,14 +4,14 @@
 <% @animals.each do |animal|%>
   <div>
     <h4> <%= animal.nom %> </h4>
-    <p> Espèce: <%= animal.especes %> </p>
+    <p> Species: <%= animal.especes %> </p>
     <p> Age: <%= animal.age %> years</p>
     <p> Localisation: <%= animal.localisation %> </p>
-    <p> Prix: <%= animal.prix %> $</p>
+    <p> Price: <%= animal.prix %> $</p>
   </div>
 <% end %>
 
-<%= link_to 'Create animal', new_animal_path %>
+<%= link_to 'Rent my pet', new_animal_path %>
 
 <h3> Reservations </h3>
 <% if @reservations.any? %>
@@ -28,5 +28,7 @@
   </div>
   <%end%>
 <% else %>
-  <p>Vous n'avez aucune réservation.</p>
+  <p>You have no reservations</p>
 <%end%>
+
+<%= link_to "Back", animals_path %>
