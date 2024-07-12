@@ -1,0 +1,29 @@
+.back {
+  background-color: #FFD166;
+  border-radius: 50px;
+  margin: 0 10px;
+  padding: 10px 20px !important;
+  color: white !important;
+  transition: background-color 0.3s;
+  border: solid 0.8px #FFD166 !important;
+  white-space: nowrap;
+}
+.btn-primary {
+  background-color: #FFD166 !important;
+  border-color: #FFD166 !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #FF6F61 !important;
+  border-color: #FF6F61 !important;
+}
+
+.new{
+  border-radius: 10px;
+}
+
+.retour {
+  margin-top: 40px !important;
+  margin-left: 112px !important;
+}
