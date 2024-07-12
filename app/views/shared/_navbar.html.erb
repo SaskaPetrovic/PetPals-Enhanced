@@ -7,23 +7,23 @@
     </div>
   <% end %>
 
-<section class="search">
-  <div class="container text-center">
-    <form class="d-flex justify-content-center" method="get" action="<%= filtered_animals_path %>">
-      <div class="input-group mb-2" style="max-width: 600px; width: 100%;">
-        <select name="localisation" class="form-control" style="max-width: 200px;">
-          <option value="">Select Region</option>
-          <% Animal.distinct.pluck(:localisation).sort.each do |localisation| %>
-            <option value="<%= localisation %>" <%= 'selected' if params[:localisation] == localisation %>><%= localisation %></option>
-          <% end %>
-        </select>
-        <div class="input-group-append">
-          <button type="submit" class="btn btn-primary">Search</button>
+  <section class="search">
+    <div class="container text-center">
+      <form class="d-flex justify-content-center" method="get" action="<%= filtered_animals_path %>">
+        <div class="input-group mb-2" style="max-width: 600px; width: 100%;">
+          <select name="localisation" class="form-control" style="max-width: 200px;">
+            <option value="">Select Region</option>
+            <% Animal.distinct.pluck(:localisation).sort.each do |localisation| %>
+              <option value="<%= localisation %>" <%= 'selected' if params[:localisation] == localisation %>><%= localisation %></option>
+            <% end %>
+          </select>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
         </div>
-      </div>
-    </form>
-  </div>
-</section>
+      </form>
+    </div>
+  </section>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
