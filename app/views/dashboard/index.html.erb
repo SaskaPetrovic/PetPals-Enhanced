@@ -4,23 +4,31 @@
 <% @animals.each do |animal|%>
   <div>
     <h4> <%= animal.nom %> </h4>
-    <p> Espèce: <%= animal.especes %> </p>
+    <p> Species: <%= animal.especes %> </p>
     <p> Age: <%= animal.age %> years</p>
     <p> Localisation: <%= animal.localisation %> </p>
-    <p> Prix: <%= animal.prix %> $</p>
+    <p> Price: <%= animal.prix %> $</p>
   </div>
- <%end%>
+<% end %>
+
+<%= link_to 'Rent my pet', new_animal_path %>
 
 <h3> Reservations </h3>
 <% if @reservations.any? %>
   <% @reservations.each do |reservation|%>
     <div>
-      <h4>Animal : <%= reservation.animal.nom %></h4>
-      <p> Date de début : <% reservation.date_debut %></p>
-      <p> Date de fin : <% reservation.date_fin %></p>
-      <p> Statut : <%= reservation.statut%></p>
-    </div>
+    <h4>Animal: <%= reservation.animal.nom %></h4>
+    <p>Species: <%= reservation.animal.especes %></p>
+    <p>Age: <%= reservation.animal.age %> years</p>
+    <p>Location: <%= reservation.animal.localisation %></p>
+    <p>Price: <%= reservation.animal.prix %> $</p>
+    <p>Start Date: <%= reservation.date_debut %></p>
+    <p>End Date: <%= reservation.date_fin %></p>
+    <p>Status: <%= reservation.statut %></p>
+  </div>
   <%end%>
 <% else %>
-  <p>Vous n'avez aucune réservation.</p>
+  <p>You have no reservations</p>
 <%end%>
+
+<%= link_to "Back", animals_path %>
