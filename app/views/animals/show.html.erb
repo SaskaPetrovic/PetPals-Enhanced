@@ -1,12 +1,11 @@
 <%= link_to animals_path, class: 'btn btn-secondary mt-3 retour', style: 'border-radius: 50px;' do %>
-  <i class="fas fa-arrow-left"></i> Back to pet list
+  <i class="fas fa-arrow-left"></i> Pet pals list
 <% end %>
 
 <div class="container mb-4">
-  <h1 class="text-left pt-4 my-4"><%= @animal.nom %></h1>
-  <div class="row align-items-start"> <!-- Add align-items-start class here -->
-
+  <div class="row">
     <div class="col-md-6">
+      <h1 class="text-left pt-4 mb-4"><%= @animal.nom %></h1>
       <div class="animal-info">
         <p><strong>Espèce:</strong> <%= @animal.especes.capitalize %></p>
         <p><strong>Âge:</strong> <%= @animal.age %> ans</p>
@@ -22,14 +21,12 @@
           <%= form.label :date_fin, "Date de fin" %>
           <%= form.date_field :date_fin, class: 'form-control', style: 'width: 100%; max-width: 300px; border-radius: 50px;' %>
         </div>
-        <%= form.submit 'Réserver cet animal', class: 'btn btn-primary reserver', style: 'border-radius: 50px;' %>
+        <%= form.submit 'Book that pet', class: 'btn btn-primary reserver', style: 'border-radius: 50px;' %>
       <% end %>
     </div>
-
-    <div class="col-md-6 d-flex justify-content-end mb-4">
-      <%= image_tag @animal.photo_url, alt: @animal.nom, class: 'img-fluid rounded shadow-sm image-right' %>
+    <div class="col-md-6 d-flex align-items-start">
+      <%= image_tag @animal.photo_url, alt: @animal.nom, class: 'img-fluid rounded shadow-sm' %>
     </div>
-
   </div>
 </div>
 
