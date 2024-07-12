@@ -1,9 +1,20 @@
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('/assets/Satoshi-Regular.woff2') format('woff2'),
+       url('/assets/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'Satoshi-Regular', sans-serif;
+}
+
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Satoshi-Regular", "sans-serif";
+$headers-font: "Satoshi-Bold", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
