@@ -15,10 +15,41 @@
   font-size: 2rem;
 }
 
+.icon-large:hover {
+  color: #FFD166;
+}
+
 h5 {
   padding-bottom: 25px;
 }
 
 #copyright {
   font-size: 0.8rem;
+}
+
+.form-control {
+  border-radius: 20px 0 0 20px;
+  align-items: center;
+  min-width: 300px;
+}
+
+#subscribe-button{
+  border-radius: 0 20px 20px 0;
+  background-color: #FFD166;
+  border-color: #FFD166;
+}
+
+#subscribe-button:hover {
+  background-color: #FF6F61;
+  border-color: #FF6F61;
+}
+
+.email-contact {
+  transition: color 0.3s;
+}
+
+.email-contact:hover {
+  color: #FFD166;
+  text-decoration: underline;
+  cursor: pointer;
 }

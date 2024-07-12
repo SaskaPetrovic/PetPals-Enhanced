@@ -25,6 +25,35 @@ a[aria-selected="true"] {
   filter: invert(1);
 }
 
+#cats-tab {
+  border-top-right-radius: 22px;
+  border-top-left-radius: 22px;
+}
+
+#dogs-tab {
+  border-top-right-radius: 22px !important;
+  border-top-left-radius: 22px !important;;
+}
+#rodents-tab {
+  border-top-right-radius: 22px !important;;
+  border-top-left-radius: 22px !important;;
+}
+
+#reptiles-tab {
+  border-top-right-radius: 22px !important;;
+  border-top-left-radius: 22px !important;;
+}
+
+#fishes-tab {
+  border-top-right-radius: 22px !important;;
+  border-top-left-radius: 22px !important;;
+}
+
+#birds-tab {
+  border-top-right-radius: 22px !important;;
+  border-top-left-radius: 22px !important;;
+}
+
 // cards
 .card {
   border-radius: 20px;
