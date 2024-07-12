@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-     <%= link_to "../pages/home.html.erb", class: "navbar-brand" do %>
+     <%= link_to root_path, class: "navbar-brand" do %>
     <div class= "logo-css">
       <%= image_tag "icons/pawprint_logo.png" %>
       <h1>PetPals</h1>
@@ -8,7 +8,7 @@
   <% end %>
 
 <section class="search">
-  <div class="container text-center">
+  <div class="container text-center no-marign">
     <form class="d-flex justify-content-center" method="get" action="<%= filtered_animals_path %>">
       <div class="input-group mb-2" style="max-width: 600px; width: 100%;">
         <select name="localisation" class="form-control" style="max-width: 200px;">
@@ -33,10 +33,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "../pages/home.html.erb", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Rent your pet", "../views/animals/new.html.erb", class: "nav-link offre"%>
+            <%= link_to "Rent your pet", new_animal_path, class: "nav-link offre"%>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
