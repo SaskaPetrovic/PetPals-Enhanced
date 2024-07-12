@@ -18,6 +18,7 @@
 }
 .logo-css h1 {
   margin-right: 10px;
+  font-size: 2rem;
 }
 
 .navbar-brand {
@@ -30,13 +31,21 @@
 }
 
 .navbar {
-  border-bottom: solid 1px #FF6F61;
+  border-bottom: solid 1.2px #3f9694;;
+}
+s
+.nav-link.offre {
+  background-color: #FFD166;
+  border-radius: 50px;
+  margin: 0 10px;
+  padding: 10px 20px !important;
+  color: white;
+  transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
-.nav-link .offre {
-  background-color: #FF6F61 !important;
-  border: solid 0.8px #FFD166;
-  border-radius: 3%;
+.nav-link.offre:hover {
+  background-color: #FF6F61;
 }
 
 .navbar-nav .nav-item {

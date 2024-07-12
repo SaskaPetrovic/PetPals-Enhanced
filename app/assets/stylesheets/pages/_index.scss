@@ -33,4 +33,10 @@ font-size: 7vh;
 .btn-xl {
   font-size: 1.5rem;
   padding: 1rem 2rem;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+.btn-xl :hover {
+  background-color: #FF6F61 !important;
 }

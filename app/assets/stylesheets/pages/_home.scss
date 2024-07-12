@@ -1,30 +1,47 @@
 
 // nav items
-.nav-item :active {
-  color: #FF6F61;
+
+.nav-link {
+  color: #333;
+  font-weight: 450 !important;
+  margin-bottom: 12px;
 }
 
-span:hover {
-  color: #FF6F61;
-}
-
-span:focus {
-  color: #FF6F61;
+.nav-link.active {
+  color: white !important;
+  background-color: #FFD166;
+  font-weight: 450 !important;
 }
 
 a[aria-selected="true"] {
-  background-color: #FF6F61 !important;
+  background-color: #FFd166 !important;
+}
+
+.nav-link img {
+  transition: filter 0.3s;
+}
+
+.nav-link.active img {
+  filter: invert(1);
 }
 
 // cards
 .card {
-  border-radius: 10px;
-  border: 1px solid #FFD166;
-  background-color: antiquewhite;
+  border-radius: 20px;
+  border: 1.3px solid #FFD166;
+  background-color: white;
+  line-height: 1;
+  margin: 8px 5px 8px 5px;
 }
 
 .card img {
-  border-radius: 10px 10px 0 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.card img:hover {
+  border-radius: 20px 20px 0 0;
+  opacity: 90%;
+  background-color: #3f9694;
 }
 
 .card-body {
@@ -34,13 +51,22 @@ a[aria-selected="true"] {
 .card {
   .card-title {
     font-family: Satoshi-Regular;
-    color: #FF6F61;
+    color: #3f9694;
     font-weight: bold;
     font-size: 1.5rem;
   }
 }
 
-h1, h5 {
+.card {
+  .card-text {
+    font-family: Satoshi-Regular;
+    color: #333;
+    font-size: 0.9rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: Satoshi-Regular;
   font-weight: bold;
+  margin-bottom: 2px;
 }
