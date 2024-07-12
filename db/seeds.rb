@@ -8,11 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require 'faker'
+Reservation.destroy_all
 Animal.destroy_all
 User.destroy_all
 
 user = User.create!(email: 'test@test.com', password: '123456')
-
+new_user = User.create!(email: 'user@test.com', password: '123456')
 
 species_images = {
   'Cat' => 'https://static.vecteezy.com/ti/photos-gratuite/p1/7234162-bengale-chat-reposant-sur-le-canape-drole-avec-des-lunettes-photo.jpg',
@@ -36,3 +37,14 @@ species_images.each do |species, photo_url|
     )
   end
 end
+
+# Création d'un nouvel animal pour new_user
+Animal.create!(
+  nom: Faker::Name.unique.first_name,
+  especes: "Fish",
+  age: rand(1..15),
+  localisation: Faker::Address.city,
+  prix: Faker::Commerce.price(range: 10..100),
+  user: new_user, # Associer cet animal à new_user
+  photo_url: "https://www.oceanopolis.com/wp-content/uploads/2018/12/poisson-clown-pp-1.jpg"
+)
