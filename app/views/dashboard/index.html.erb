@@ -1,34 +1,102 @@
-<h1>Dashboard</h1>
 
-<h3>My Animals</h3>
-<% @animals.each do |animal|%>
-  <div>
-    <h4> <%= animal.nom %> </h4>
-    <p> Species: <%= animal.especes %> </p>
-    <p> Age: <%= animal.age %> years</p>
-    <p> Localisation: <%= animal.localisation %> </p>
-    <p> Price: <%= animal.prix %> $</p>
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="mb-3">My Animals</h3>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <a class="btn btn-primary mb-3 mr-1 back" href="#carouselAnimals" role="button" data-slide="prev">
+          <i class="fa fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-primary mb-3 back" href="#carouselAnimals" role="button" data-slide="next">
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-12">
+        <div id="carouselAnimals" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner">
+            <% @animals.each_slice(3).with_index do |animal_slice, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <div class="row">
+                  <% animal_slice.each do |animal| %>
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <%= image_tag animal.photo_url, class: 'img-fluid' %>
+                        <div class="card-body">
+                          <h4 class="card-title"><%= animal.nom %></h4>
+                          <p class="card-text"><%= number_to_currency(animal.prix, unit: "$") %></p>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<%= link_to 'Rent my pet', new_animal_path, class: "btn btn-primary back" %>
+
+    <div class="row mt-5">
+      <div class="col-6">
+        <h3 class="mb-3">My Reservations</h3>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <a class="btn btn-primary mb-3 mr-1 back" href="#carouselReservations" role="button" data-slide="prev">
+          <i class="fa fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-primary mb-3 back" href="#carouselReservations" role="button" data-slide="next">
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-12">
+        <div id="carouselReservations" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner">
+            <% if @reservations.any? %>
+              <% @reservations.each_slice(3).with_index do |reservation_slice, index| %>
+                <div class="carousel-item <%= 'active' if index == 0 %>">
+                  <div class="row">
+                    <% reservation_slice.each do |reservation| %>
+                      <div class="col-md-4 mb-3">
+                        <div class="card">
+                          <%= image_tag reservation.animal.photo_url, class: 'img-fluid' %>
+                          <div class="card-body">
+                            <h4 class="card-title"><%= reservation.animal.nom %></h4>
+                            <p class="card-text">Species: <%= reservation.animal.especes %></p>
+                            <p class="card-text">Price: <%= number_to_currency(reservation.animal.prix, unit: "$") %></p>
+                            <p class="card-text">Start Date: <%= reservation.date_debut %></p>
+                            <p class="card-text">End Date: <%= reservation.date_fin %></p>
+                            <p class="card-text">Status: <%= reservation.statut %></p>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>You have no reservations</p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<%= link_to "All animals", animals_path, class: "btn btn-primary back" %>
   </div>
-<% end %>
+</section>
 
-<%= link_to 'Rent my pet', new_animal_path %>
 
-<h3> Reservations </h3>
-<% if @reservations.any? %>
-  <% @reservations.each do |reservation|%>
-    <div>
-    <h4>Animal: <%= reservation.animal.nom %></h4>
-    <p>Species: <%= reservation.animal.especes %></p>
-    <p>Age: <%= reservation.animal.age %> years</p>
-    <p>Location: <%= reservation.animal.localisation %></p>
-    <p>Price: <%= reservation.animal.prix %> $</p>
-    <p>Start Date: <%= reservation.date_debut %></p>
-    <p>End Date: <%= reservation.date_fin %></p>
-    <p>Status: <%= reservation.statut %></p>
-  </div>
-  <%end%>
-<% else %>
-  <p>You have no reservations</p>
-<%end%>
-
-<%= link_to "Back", animals_path %>
+<!-- JavaScript dependencies -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
