@@ -1,35 +1,46 @@
-<h1>Rent a new pet</h1>
+<div class="container">
+  <%= link_to dashboard_path, class: 'btn btn-secondary mt-3 retour mb-4', style: 'border-radius: 50px;' do %>
+    <i class="fas fa-arrow-left"></i> Dashboard
+  <%end%>
 
-<%= form_with(model: @animal, local: true) do |form| %>
-  <div>
-    <%= form.label :nom %>
-    <%= form.text_field :nom %>
+  <h1 class="mb-4">Rent a New Pet</h1>
+
+  <%= form_with(model: @animal, local: true, class: "mb-4") do |form| %>
+    <div class="form-group mb-3">
+      <%= form.label :nom, class: "font-weight-bold mb-2" %>
+      <%= form.text_field :nom, class: "form-control new " %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :especes, class: "font-weight-bold mb-2" %>
+      <%= form.select :especes, ['Cat', 'Dog', 'Fish', 'Reptile', 'Rodent', 'Bird'], { prompt: "Select Species" }, class: "form-control new" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :age, class: "font-weight-bold mb-2" %>
+      <%= form.number_field :age, class: "form-control border new" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :localisation, class: "font-weight-bold mb-2" %>
+      <%= form.text_field :localisation, class: "form-control new" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :prix, class: "font-weight-bold mb-2" %>
+      <%= form.number_field :prix, class: "form-control new" %>
+    </div>
+
+    <div>
+    <%= form.label :photo_url, class: "font-weight-bold mb-2"%>
+    <%= form.text_field :photo_url, class: "form-control new"%>
   </div>
 
-  <div>
-    <%= form.label :especes %>
-    <%= form.select :especes, ['Cat','Dog','Fish','Reptile','Rodent','Bird']%>
+    <div class="text-right mt-4">
+      <%= form.submit "Submit", class: "btn btn-primary back" %>
+    </div>
+  <% end%>
+
+
+
   </div>
-
-  <div>
-    <%= form.label :age %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div>
-    <%= form.label :localisation %>
-    <%= form.text_field :localisation %>
-  </div>
-
-  <div>
-    <%= form.label :prix %>
-    <%= form.number_field :prix %>
-  </div>
-
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to "Dashboard", dashboard_path %>
-
-<%= link_to "All Animals", animals_path %>
