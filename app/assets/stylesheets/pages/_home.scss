@@ -1,22 +1,72 @@
-// Specific CSS for your home-page
-// search bar
-.search {
-  background-color: #5db9de;
-  padding: 50px 0;
+
+// nav items
+
+.nav-link {
+  color: #333;
+  font-weight: 450 !important;
+  margin-bottom: 12px;
 }
-.search h1 {
-  color: #333333;
-  margin-bottom: 30px;
-}
-.search .form-control {
-  border-radius: 20px 0 0 20px;
-}
-.search .btn-primary {
-  border-radius: 0 20px 20px 0;
+
+.nav-link.active {
+  color: white !important;
   background-color: #FFD166;
-  border-color: #FFD166;
+  font-weight: 450 !important;
 }
-.search .btn-primary:hover {
-  background-color: #FF6F61;
-  border-color: #FF6F61;
+
+a[aria-selected="true"] {
+  background-color: #FFd166 !important;
+}
+
+.nav-link img {
+  transition: filter 0.3s;
+}
+
+.nav-link.active img {
+  filter: invert(1);
+}
+
+// cards
+.card {
+  border-radius: 20px;
+  border: 1.3px solid #FFD166;
+  background-color: white;
+  line-height: 1;
+  margin: 8px 5px 8px 5px;
+}
+
+.card img {
+  border-radius: 20px 20px 0 0;
+}
+
+.card img:hover {
+  border-radius: 20px 20px 0 0;
+  opacity: 90%;
+  background-color: #3f9694;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.card {
+  .card-title {
+    font-family: Satoshi-Regular;
+    color: #3f9694;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+.card {
+  .card-text {
+    font-family: Satoshi-Regular;
+    color: #333;
+    font-size: 0.9rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Satoshi-Regular;
+  font-weight: bold;
+  margin-bottom: 2px;
 }

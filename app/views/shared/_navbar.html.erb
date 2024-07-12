@@ -1,7 +1,29 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "PetPals", "#", class: "navbar-brand" %>
+     <%= link_to "#", class: "navbar-brand" do %>
+    <div class= "logo-css">
+      <%= image_tag "icons/pawprint_logo.png" %>
+      <h1>PetPals</h1>
+    </div>
+  <% end %>
 
+<section class="search">
+  <div class="container text-center">
+    <form class="d-flex justify-content-center" method="get" action="<%= filtered_animals_path %>">
+      <div class="input-group mb-2" style="max-width: 600px; width: 100%;">
+        <select name="localisation" class="form-control" style="max-width: 200px;">
+          <option value="">Select Region</option>
+          <% Animal.distinct.pluck(:localisation).sort.each do |localisation| %>
+            <option value="<%= localisation %>" <%= 'selected' if params[:localisation] == localisation %>><%= localisation %></option>
+          <% end %>
+        </select>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,7 +36,7 @@
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Creer une offre", "#", class: "nav-link" %>
+            <%= link_to "Let your pet", "#", class: "nav-link offre"%>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
