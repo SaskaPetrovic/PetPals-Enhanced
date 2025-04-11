@@ -2,28 +2,42 @@
 // nav items
 
 .nav-link {
-  color: #333;
+  color: var(--primary-text-color);
   font-weight: 450 !important;
   margin-bottom: 12px;
 }
+.nav-link:hover{
+  color: var(--primary-text-color) !important;
+  border-bottom: 1px solid var(--primary-color) !important;
+}
+
+.nav-tabs {
+  border-color: var(--primary-color);
+}
 
 .nav-link.active {
-  color: white !important;
-  background-color: #FFD166;
+  //color: white !important;
+  background-color: var(--primary-bg-color) !important;
+  color: var(--primary-text-color);
   font-weight: 450 !important;
+  border-left: 1px solid var(--primary-color)!important;
+  border-right: 1px solid var(--primary-color) !important;
+  border-top: 1px solid var(--primary-color) !important;
+  border-bottom: 1px solid var(--primary-bg-color) !important;
 }
 
-a[aria-selected="true"] {
-  background-color: #FFd166 !important;
-}
+/*a[aria-selected="true"] {
+  //background-color: #FFd166 !important;
+  //border-color: #3f9694 !important;
+}*/
 
 .nav-link img {
   transition: filter 0.3s;
 }
 
-.nav-link.active img {
-  filter: invert(1);
-}
+//.nav-link.active img {
+ // filter: invert(1);
+//}
 
 #cats-tab {
   border-top-right-radius: 22px;
@@ -56,21 +70,19 @@ a[aria-selected="true"] {
 
 // cards
 .card {
-  border-radius: 20px;
-  border: 1.3px solid #FFD166;
-  background-color: white;
+  border-color:ghostwhite !important;
+  background-color: #f8f8f8;
   line-height: 1;
   margin: 8px 5px 8px 5px;
 }
 
 .card img {
-  border-radius: 20px 20px 0 0;
+  border-radius: 1rem;
 }
 
 .card img:hover {
-  border-radius: 20px 20px 0 0;
-  opacity: 90%;
-  background-color: #3f9694;
+  opacity: 80%;
+
 }
 
 .card-body {
@@ -80,16 +92,17 @@ a[aria-selected="true"] {
 .card {
   .card-title {
     font-family: Satoshi-Regular;
-    color: #3f9694;
+    color: var(--secondary-text-color);
     font-weight: bold;
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 
 .card {
   .card-text {
     font-family: Satoshi-Regular;
-    color: #333;
+    color: var(--primary-text-color);
     font-size: 0.9rem;
   }
 }
