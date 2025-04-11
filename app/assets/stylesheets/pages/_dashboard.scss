@@ -24,14 +24,14 @@
   text-align: center;
 }
 .btn-primary {
-  background-color: #FFD166 !important; /* Set your specific yellow */
-  border-color: #FFD166 !important; /* Ensure the border is also yellow */
+  background-color: var(--secondary-color) !important; /* Set your specific yellow */
+  border-color: var(--secondary-color) !important; /* Ensure the border is also yellow */
   color: white !important; /* Keep text color white */
 }
 
 .btn-primary:hover {
-  background-color: #FF6F61 !important; /* Hover color */
-  border-color: #FF6F61 !important; /* Hover border color */
+  background-color: var(--accent-color) !important; /* Hover color */
+  border-color: var(--accent-color) !important; /* Hover border color */
 }
 
 .back {
@@ -40,6 +40,6 @@
   padding: 10px 20px !important;
   color: white !important;
   transition: background-color 0.3s;
-  border: solid 0.8px #FFD166 !important; /* Border for back button */
+  border: solid 0.8px var(--secondary-color) !important; /* Border for back button */
   white-space: nowrap;
 }

@@ -7,7 +7,7 @@
   left: 0;
   font-size: 1.2rem;
   z-index: 1000;
-  background-color: #3f9694 !important;
+  background-color: var(--secondary-bg-color)!important;
 
 }
 
@@ -16,10 +16,10 @@
 }
 
 .icon-large:hover {
-  color: #FFD166;
+  color: var(--secondary-color);
 }
 
-h5 {
+.footerH5 {
   padding-bottom: 25px;
 }
 
@@ -35,13 +35,13 @@ h5 {
 
 #subscribe-button{
   border-radius: 0 20px 20px 0;
-  background-color: #FFD166;
-  border-color: #FFD166;
+  background-color:  var(--secondary-color);
+  border-color:  var(--secondary-color);
 }
 
 #subscribe-button:hover {
-  background-color: #FF6F61;
-  border-color: #FF6F61;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .email-contact {
@@ -49,7 +49,7 @@ h5 {
 }
 
 .email-contact:hover {
-  color: #FFD166;
+  color:  var(--secondary-color);
   text-decoration: underline;
   cursor: pointer;
 }
